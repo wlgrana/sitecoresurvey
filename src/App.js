@@ -123,15 +123,6 @@ function App() {
     { name: 'Limited Templates & Layout', value: 6 },
   ];
 
-  const improvementAreasData = [
-    { name: 'Technical & Performance', value: 13 },
-    { name: 'UI/Navigation', value: 8 },
-    { name: 'Content tools', value: 7 },
-    { name: 'Integration', value: 5 },
-    { name: 'Workflow', value: 3 },
-    { name: 'Permissions', value: 3 },
-  ];
-
   return (
     <div className="dashboard">
       <h1 className="main-title">Sitecore User Experience Survey Insights</h1>
