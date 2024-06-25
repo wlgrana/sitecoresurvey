@@ -1,7 +1,7 @@
 {
   "name": "sitecore-survey-dashboard",
   "version": "1.0.0",
-  "homepage": "https://github.com/wlgrana/sc-survey",
+  "homepage": "https://wlgrana.github.io/sc-survey/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
