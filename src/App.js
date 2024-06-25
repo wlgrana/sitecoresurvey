@@ -217,8 +217,8 @@ function App() {
         </ul>
 
         <QuoteBox 
-          quote="By focusing on these key areas - from technical optimization to content management and advanced features - we can transform Sitecore into a powerful tool that not only meets our current needs but also drives our future content strategy and business objectives."
-          author="Digital Strategy Team"
+          quote="From technical optimization to content management and advanced features - we can transform Sitecore into a powerful tool that not only meets our current needs but also drives our future content strategy and business objectives."
+          author="DX Team"
         />
       </InfoGraphicSection>
 
@@ -281,7 +281,7 @@ function App() {
 
         <QuoteBox 
           quote="By following this phased approach, we're not just fixing issues – we're transforming our Sitecore implementation into a powerful, user-friendly platform that drives our digital strategy forward. Each step builds upon the last, creating a compounding positive effect on our operations and our ability to serve our audience effectively."
-          author="Digital Transformation Team"
+          author="DX Team"
         />
       </InfoGraphicSection>
     </div>
