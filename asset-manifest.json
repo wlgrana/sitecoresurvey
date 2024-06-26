@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/sitecoresurvey/static/css/main.927f2b61.css",
+    "main.js": "/sitecoresurvey/static/js/main.4d05b063.js",
+    "static/js/453.cc3b7b90.chunk.js": "/sitecoresurvey/static/js/453.cc3b7b90.chunk.js",
+    "index.html": "/sitecoresurvey/index.html",
+    "main.927f2b61.css.map": "/sitecoresurvey/static/css/main.927f2b61.css.map",
+    "main.4d05b063.js.map": "/sitecoresurvey/static/js/main.4d05b063.js.map",
+    "453.cc3b7b90.chunk.js.map": "/sitecoresurvey/static/js/453.cc3b7b90.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.927f2b61.css",
+    "static/js/main.4d05b063.js"
+  ]
+}
