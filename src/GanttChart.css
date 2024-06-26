@@ -1,0 +1,93 @@
+.gantt-chart {
+  font-family: Arial, sans-serif;
+  margin: 20px 0;
+}
+
+.gantt-timeline {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.gantt-month {
+  flex: 1;
+  text-align: center;
+  font-weight: bold;
+  padding: 5px;
+  background-color: #f0f0f0;
+}
+
+.gantt-bar-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.gantt-bar-label {
+  width: 80px;
+  padding-right: 10px;
+  text-align: right;
+  font-weight: bold;
+}
+
+.gantt-bar-timeline {
+  flex: 1;
+  height: 30px;
+  background-color: #e0e0e0;
+  position: relative;
+}
+
+.gantt-bar {
+  height: 100%;
+  background-color: #8DC63F;
+  position: absolute;
+  top: 0;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.gantt-bar:hover {
+  background-color: #6a9326;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.gantt-tooltip {
+  visibility: hidden;
+  width: 250px;
+  background-color: #333;
+  color: #fff;
+  text-align: left;
+  border-radius: 6px;
+  padding: 10px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -125px;
+  opacity: 0;
+  transition: opacity 0.3s, visibility 0.3s;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.gantt-tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+}
+
+.gantt-bar:hover .gantt-tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+.gantt-tooltip-title {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #8DC63F;
+}

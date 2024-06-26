@@ -21,6 +21,9 @@ import {
   FolderTree 
 } from 'lucide-react';
 
+import { Chart } from "react-google-charts";
+import GanttChart from './GanttChart';
+
 const InfoGraphicSection = ({ title, children }) => (
   <div className="info-graphic-section">
     <h2 className="section-title">{title}</h2>
@@ -63,6 +66,12 @@ const BarChartSection = ({ data, title }) => (
   </div>
 );
 
+const createGanttData = () => [
+  { name: 'Phase 1', start: new Date(2024, 6, 1).getTime(), end: new Date(2024, 8, 30).getTime() },
+  { name: 'Phase 3', start: new Date(2024, 6, 1).getTime(), end: new Date(2024, 8, 30).getTime() },
+  { name: 'Phase 2', start: new Date(2024, 9, 1).getTime(), end: new Date(2024, 11, 31).getTime() },
+];
+
 const PieChartSection = ({ data, title }) => {
   const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
 
@@ -104,6 +113,7 @@ const PieChartSection = ({ data, title }) => {
         </PieChart>
       </ResponsiveContainer>
     </div>
+    
   );
 };
 
@@ -216,8 +226,8 @@ function App() {
   <InfoGraphicSection title="Next Steps">
         <p className="challenges-intro">
           Based on our survey findings, we've developed a phased approach to address the challenges and maximize the potential of our Sitecore implementation. This plan is designed to progressively enhance our digital capabilities, user experience, and overall business impact.
+        <GanttChart />
         </p>
-
         <h3>Phase 1: Foundation Improvements</h3>
         <NextStepItem
           icon={Zap}
@@ -242,7 +252,20 @@ function App() {
           impact="Streamlined processes, improved collaboration, and consistent content quality across departments."
         />
 
-        <h3>Phase 2: Advanced Features and Optimization</h3>
+        <h3>Phase 2: Content Organization and Cleanup</h3>
+        <NextStepItem
+          icon={FolderTree}
+          title="Content and Media Library Reorganization"
+          description="Systematically clean up and reorganize the content and media library with a new, intuitive structure."
+          impact="Significantly reduced time in content discovery, elimination of duplicates, and improved asset management efficiency."
+        />
+
+        <QuoteBox 
+          quote="By following this phased approach, we're not just fixing issues – we're transforming our Sitecore implementation into a powerful, user-friendly platform that drives our digital strategy forward. Each step builds upon the last, creating a compounding positive effect on our operations and our ability to serve our audience effectively."
+          author="DX Team"
+        />
+
+        <h3>Phase 3: Advanced Features and Optimization</h3>
         <NextStepItem
           icon={BarChart2}
           title="Enable A/B Testing and Sitecore Analytics"
@@ -260,19 +283,6 @@ function App() {
           title="New Templates and Layouts"
           description="Develop flexible templates and layouts that accommodate diverse content needs and optimize for conversions."
           impact="Increased creativity in content presentation, better user experience, and improved ability to achieve business objectives through our digital platforms."
-        />
-
-        <h3>Phase 3: Content Organization and Cleanup</h3>
-        <NextStepItem
-          icon={FolderTree}
-          title="Content and Media Library Reorganization"
-          description="Systematically clean up and reorganize the content and media library with a new, intuitive structure."
-          impact="Significantly reduced time in content discovery, elimination of duplicates, and improved asset management efficiency."
-        />
-
-        <QuoteBox 
-          quote="By following this phased approach, we're not just fixing issues – we're transforming our Sitecore implementation into a powerful, user-friendly platform that drives our digital strategy forward. Each step builds upon the last, creating a compounding positive effect on our operations and our ability to serve our audience effectively."
-          author="DX Team"
         />
       </InfoGraphicSection>
     </div>
