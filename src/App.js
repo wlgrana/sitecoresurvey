@@ -18,11 +18,41 @@ import {
   Users, 
   BarChart2, 
   Layout, 
-  FolderTree 
+  FolderTree, 
+  Briefcase, 
+  FileText, 
+  School, 
+  Scale, 
+  Laptop 
 } from 'lucide-react';
-
-import { Chart } from "react-google-charts";
+import { Chart } from 'react-google-charts';
 import GanttChart from './GanttChart';
+
+const TeamTable = () => {
+  const teams = [
+    { name: 'Marketing', icon: Users },
+    { name: 'Product', icon: Briefcase },
+    { name: 'Assessments', icon: FileText },
+    { name: 'School & Industry Engagement', icon: School },
+    { name: 'Legal', icon: Scale },
+    { name: 'Research', icon: BarChart2 },
+    { name: 'Technology', icon: Laptop },
+  ];
+
+  return (
+    <div className="team-table">
+      <h3>Teams Interviewed</h3>
+      <div className="team-grid">
+        {teams.map((team, index) => (
+          <div key={index} className="team-item">
+            <team.icon size={24} />
+            <span>{team.name}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
 
 const InfoGraphicSection = ({ title, children }) => (
   <div className="info-graphic-section">
@@ -31,15 +61,19 @@ const InfoGraphicSection = ({ title, children }) => (
   </div>
 );
 
-const NextStepItem = ({ icon: Icon, title, description, impact }) => (
-  <div className="next-step-item">
+const NextStepItem = ({ icon: Icon, title, description, impact, partnerships, urgent }) => (
+  <div className={`next-step-item ${urgent ? 'urgent' : ''}`}>
     <div className="next-step-header">
       <Icon className="next-step-icon" />
       <h4>{title}</h4>
+      {urgent && <span className="urgent-label">Urgent</span>}
     </div>
-    <p>{description}</p>
+    <div dangerouslySetInnerHTML={{ __html: description }}></div>
     <div className="impact">
       <strong>Impact:</strong> {impact}
+    </div>
+    <div className="partnerships">
+      <strong>Partnerships:</strong> {partnerships}
     </div>
   </div>
 );
@@ -142,6 +176,7 @@ function App() {
           <p>
             At GMAC, our mission is to empower business schools and candidates to discover and evaluate each other. Sitecore CMS is a crucial tool in achieving this goal, serving as the backbone of our digital presence and content strategy. To ensure we're maximizing Sitecore's potential and empowering our users, we conducted a comprehensive survey with 22 participants from various departments.
           </p>
+          <TeamTable />
           <p>
             This survey aimed to assess the current Sitecore CMS experience and identify areas where we can better leverage the platform to meet our business objectives. By understanding user challenges and needs, we can enhance our digital capabilities, improve content management, and ultimately provide better services to business schools and candidates.
           </p>
@@ -224,32 +259,40 @@ function App() {
       </InfoGraphicSection>
 
   <InfoGraphicSection title="Next Steps">
-        <p className="challenges-intro">
-          Based on our survey findings, we've developed a phased approach to address the challenges and maximize the potential of our Sitecore implementation. This plan is designed to progressively enhance our digital capabilities, user experience, and overall business impact.
-        <GanttChart />
-        </p>
+  <p className="challenges-intro">
+    Based on our survey findings, we've developed a phased approach to address the challenges and maximize the potential of our Sitecore implementation. This plan is designed to progressively enhance our digital capabilities, user experience, and overall business impact.
+    <GanttChart />
+  </p> 
         <h3>Phase 1: Foundation Improvements</h3>
         <NextStepItem
           icon={Zap}
           title="Performance Optimization"
-          description="Our development team, in collaboration with Sitecore support, will conduct a thorough investigation to identify the root causes of the sluggish performance. We'll implement a multi-faceted approach to resolve these issues, which may include:
-          1. Optimizing caching strategies at various levels (browser, CDN, Sitecore)
-          2. Reviewing and potentially upgrading server specifications
-          3. Analyzing and refining Sitecore pipelines and integrations for efficiency
-          4. Implementing database optimizations"
+          description={`
+            <p>Our development team, in collaboration with Sitecore support, will conduct a thorough investigation to identify the root causes of the sluggish performance. We'll implement a multi-faceted approach to resolve these issues, which may include:</p>
+            <ol>
+              <li>Optimizing caching strategies at various levels (browser, CDN, Sitecore)</li>
+              <li>Reviewing and potentially upgrading server specifications</li>
+              <li>Analyzing and refining Sitecore pipelines and integrations for efficiency</li>
+              <li>Implementing database optimizations</li>
+            </ol>
+          `}
           impact="This comprehensive approach will result in an immediate boost in system responsiveness, significantly reducing page load times and improving the overall user experience. It will lead to increased productivity for content creators and editors, reduced frustration among all users, and faster content delivery to our audience. Moreover, improved performance will positively impact our search engine rankings and user engagement metrics."
-          />
+          partnerships="Technology Team at GMAC, Sitecore Support, Infrastructure Team"
+          urgent={true}
+        />
         <NextStepItem
           icon={BookOpen}
           title="Training and Learning Resources"
           description="Develop comprehensive training materials and conduct workshops for users at all levels."
           impact="Increased user confidence, better utilization of Sitecore features, and reduced dependence on power users."
+          partnerships="Learning & Development Team, Content Management Team, Sitecore Experts"
         />
         <NextStepItem
           icon={Users}
           title="Workflow Standardization"
           description="Define and implement standardized workflows for content creation and publishing."
           impact="Streamlined processes, improved collaboration, and consistent content quality across departments."
+          partnerships="Content Strategy Team, Marketing Team, Editorial Team"
         />
 
         <h3>Phase 2: Content Organization and Cleanup</h3>
@@ -258,11 +301,7 @@ function App() {
           title="Content and Media Library Reorganization"
           description="Systematically clean up and reorganize the content and media library with a new, intuitive structure."
           impact="Significantly reduced time in content discovery, elimination of duplicates, and improved asset management efficiency."
-        />
-
-        <QuoteBox 
-          quote="By following this phased approach, we're not just fixing issues – we're transforming our Sitecore implementation into a powerful, user-friendly platform that drives our digital strategy forward. Each step builds upon the last, creating a compounding positive effect on our operations and our ability to serve our audience effectively."
-          author="DX Team"
+          partnerships="Content Management Team, Digital Asset Management Team, Marketing Team"
         />
 
         <h3>Phase 3: Advanced Features and Optimization</h3>
@@ -271,18 +310,26 @@ function App() {
           title="Enable A/B Testing and Sitecore Analytics"
           description="Implement and train users on A/B testing capabilities and Sitecore's analytics features."
           impact="Data-driven decision making, improved content effectiveness, and better understanding of user behavior."
+          partnerships="Analytics Team, Marketing Team, UX Research Team"
         />
         <NextStepItem
           icon={Users}
           title="Personalization Implementation"
           description="Roll out personalization features and train teams on creating targeted content experiences."
           impact="Enhanced user engagement, improved conversion rates, and more relevant content delivery to our audience."
+          partnerships="Marketing Team, UX Design Team, Content Strategy Team"
         />
         <NextStepItem
           icon={Layout}
           title="New Templates and Layouts"
           description="Develop flexible templates and layouts that accommodate diverse content needs and optimize for conversions."
           impact="Increased creativity in content presentation, better user experience, and improved ability to achieve business objectives through our digital platforms."
+          partnerships="UX Design Team, Front-end Development Team, Content Strategy Team"
+        />
+
+        <QuoteBox 
+          quote="By following this phased approach, we're not just fixing issues – we're transforming our Sitecore implementation into a powerful, user-friendly platform that drives our digital strategy forward. Each step builds upon the last, creating a compounding positive effect on our operations and our ability to serve our audience effectively."
+          author="DX Team"
         />
       </InfoGraphicSection>
     </div>

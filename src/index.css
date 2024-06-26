@@ -122,3 +122,55 @@ li {
   font-style: italic;
   color: #555;
 }
+
+.partnerships {
+  margin-top: 10px;
+  font-style: italic;
+  color: #555;
+}
+
+.next-step-item.urgent {
+  border: 2px solid #ff4d4d;
+  border-radius: 5px;
+  padding: 15px;
+  position: relative;
+}
+
+.urgent-label {
+  background-color: #ff4d4d;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 3px;
+  font-size: 0.8em;
+  font-weight: bold;
+  position: absolute;
+  top: -10px;
+  right: 10px;
+}
+
+.next-step-header {
+  position: relative;
+}
+
+.team-table {
+  margin: 20px 0;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.team-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+}
+
+.team-item svg {
+  margin-right: 10px;
+  color: #8DC63F;
+}
