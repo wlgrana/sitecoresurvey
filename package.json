@@ -1,7 +1,7 @@
 {
   "name": "sc-survey",
   "version": "1.0.0",
-  "homepage": "https://wlgrana.github.io/sc-survey",
+  "homepage": "https://wlgrana.github.io/sitecoresurvey",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
