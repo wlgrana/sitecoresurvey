@@ -283,9 +283,19 @@ function App() {
         <NextStepItem
           icon={BookOpen}
           title="Training and Learning Resources"
-          description="Develop comprehensive training materials and conduct workshops for users at all levels."
-          impact="Increased user confidence, better utilization of Sitecore features, and reduced dependence on power users."
-          partnerships="Learning & Development Team, Content Management Team, Sitecore Experts"
+          description={`
+            <p>We will develop a comprehensive training program and create a variety of learning resources to empower users at all levels. These resources will be centralized and easily accessible through Microsoft Teams and SharePoint, allowing users to search and find the training they need efficiently. Our initiative will include:</p>
+            <ol>
+              <li><strong>Role-Based Training Modules:</strong> Tailored training paths for content creators, editors, marketers, and developers, available on SharePoint.</li>
+              <li><strong>Documentation and Quick Reference Guides:</strong> Easily searchable, up-to-date documentation on Sitecore features and best practices, available on SharePoint.</li>
+              <li><strong>1-on-1 Training Sessions:</strong> Personalized training sessions that can be requested and scheduled through Teams. These sessions will be recorded and made available for re-watching on SharePoint.</li>
+              <li><strong>Sandbox Environment:</strong> A safe space for users to experiment with Sitecore features without affecting the live site, with access instructions on SharePoint.</li>
+            </ol>
+            <p>All resources will be tagged and categorized for easy searching within SharePoint and Teams.</p>
+          `}
+          impact={`This comprehensive training approach will significantly boost user confidence and proficiency across all skill levels, leading to better utilization of Sitecore's advanced features and more dynamic content. By spreading expertise across teams, we'll reduce dependence on a small group of power users and foster enhanced collaboration between departments. New team members will onboard faster with easily accessible, centralized resources. The combination of on-demand materials and personalized 1-on-1 sessions will cater to individual learning styles and specific role requirements, allowing users to learn at their own pace and revisit content as needed.
+          `}
+          partnerships="TBD"
         />
         <NextStepItem
           icon={Users}
