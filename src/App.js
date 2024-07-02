@@ -35,8 +35,7 @@ const TeamTable = () => {
     { name: 'Assessments', icon: FileText },
     { name: 'School & Industry Engagement', icon: School },
     { name: 'Legal', icon: Scale },
-    { name: 'Research', icon: BarChart2 },
-    { name: 'Technology', icon: Laptop },
+    { name: 'Technology', icon: Laptop }
   ];
 
   return (
@@ -174,7 +173,7 @@ function App() {
       <InfoGraphicSection title="Overview">
         <p className="challenges-intro">
           <p>
-            At GMAC, our mission is to empower business schools and candidates to discover and evaluate each other. Sitecore CMS is a crucial tool in achieving this goal, serving as the backbone of our digital presence and content strategy. To ensure we're maximizing Sitecore's potential and empowering our users, we conducted a comprehensive survey with 22 participants from various departments.
+            At GMAC, our mission is to empower business schools and candidates to discover and evaluate each other. Sitecore CMS is a crucial tool in achieving this goal, serving as the backbone of our digital presence and content strategy. To ensure we're maximizing Sitecore's potential and empowering our users, we conducted a comprehensive survey with 26 participants from various departments.
           </p>
           <TeamTable />
           <p>
@@ -193,6 +192,7 @@ function App() {
   </p>
   <PieChartSection data={challengesData} title="Distribution of Key Challenges" />
   <ul className="detailed-challenges">
+  <br></br>
     <li>
       <strong>Technical issues & Performance</strong>
       <p>The majority of users reported frequent technical glitches and slow system performance. These issues significantly hinder their ability to efficiently update and publish content, often leading to delays in critical information dissemination and frustration among content creators.</p>
@@ -201,6 +201,7 @@ function App() {
         author="Marketing Specialist"
       />
     </li>
+    <br></br>
     <li>
       <strong>Extremely difficult to find content and media</strong>
       <p>Users expressed significant frustration with the content and media organization within Sitecore. Many reported spending excessive time searching for specific assets or content pieces, leading to inefficiencies in content creation and management processes. This difficulty in locating resources hampers productivity and can result in duplicated efforts.</p>
@@ -209,6 +210,7 @@ function App() {
         author="Content Manager"
       />
     </li>
+    <br></br>
     <li>
       <strong>Intimidation due to lack of training and know-how</strong>
       <p>A considerable number of users felt intimidated by the CMS due to insufficient training and understanding of its features. This lack of confidence in using Sitecore leads to underutilization of the platform's capabilities, reluctance to explore advanced features, and increased dependence on a small number of "power users" within the organization.</p>
@@ -217,6 +219,7 @@ function App() {
         author="Junior Content Creator"
       />
     </li>
+    < br></br>
     <li>
       <strong>Limited templates and suboptimal content layout</strong>
       <p>Users highlighted that the current templating system and content layout options in Sitecore do not maximize the potential of their content or effectively drive conversions. The rigid structure of existing templates limits creativity and fails to accommodate diverse content needs. Additionally, the inability to easily optimize layouts for user engagement and conversion paths results in missed opportunities to achieve key business objectives.</p>
@@ -236,7 +239,7 @@ function App() {
           <li>Enable Sitecore analytics for better insights</li>
           <li>Implement A/B testing capabilities</li>
         </ul>
-
+        
         <h3>2. Content Management and Organization</h3>
         <ul>
           <li>Clean up media library and better organize content</li>
@@ -244,7 +247,7 @@ function App() {
           <li>Create new templates to maximize content effectiveness</li>
           <li>Standardize workflows for content creation and publishing</li>
         </ul>
-
+        
         <h3>3. User Empowerment and Advanced Features</h3>
         <ul>
           <li>Develop educational resources to help users leverage and maximize Sitecore</li>
@@ -300,47 +303,83 @@ function App() {
         <NextStepItem
           icon={Users}
           title="Workflow Standardization"
-          description="Define and implement standardized workflows for content creation and publishing."
-          impact="Streamlined processes, improved collaboration, and consistent content quality across departments."
-          partnerships="Content Strategy Team, Marketing Team, Editorial Team"
+          description={`
+            We will define and implement standardized workflows for content creation and publishing in Sitecore. This initiative will:
+            <ul>
+              <li>Map out current content processes across departments</li>
+              <li>Identify bottlenecks and inefficiencies in existing workflows</li>
+              <li>Design streamlined, role-based approval processes</li>
+              <li>Implement automated notifications and reminders within Sitecore</li>
+              <li>Create clear documentation and guidelines for each workflow stage</li>
+            </ul>
+            These standardized workflows will be flexible enough to accommodate different content types and departmental needs while maintaining consistency in our publishing process.
+          `}
+          impact={`
+            Implementing standardized workflows will streamline our content processes, significantly improving collaboration across teams. This will lead to more consistent content quality across all departments and faster time-to-publish for critical updates. By clearly defining roles and responsibilities within the workflow, we'll reduce confusion and minimize the risk of content errors or oversight. The improved efficiency will allow our teams to focus more on creating high-quality content rather than managing complex processes, ultimately enhancing our overall digital presence and responsiveness to market needs.
+          `}
+          partnerships="Marketing Team, Editorial Team"
         />
-
         <h3>Phase 2: Content Organization and Cleanup</h3>
         <NextStepItem
           icon={FolderTree}
           title="Content and Media Library Reorganization"
-          description="Systematically clean up and reorganize the content and media library with a new, intuitive structure."
-          impact="Significantly reduced time in content discovery, elimination of duplicates, and improved asset management efficiency."
-          partnerships="Content Management Team, Digital Asset Management Team, Marketing Team"
+          description={`
+            <p>We will embark on a comprehensive overhaul of our content and media library structure within Sitecore. This initiative involves a systematic review of all existing content and media assets, followed by the implementation of a new, intuitive organizational structure. We'll develop clear naming conventions, establish a logical hierarchy, and implement robust metadata tagging to enhance searchability. This reorganization will also include the creation of templates and guidelines to ensure consistency in future content uploads and organization.</p>
+          `}
+          impact={`
+            This reorganization will significantly reduce time spent on content discovery, eliminating duplicates and improving overall asset management efficiency. By creating a more intuitive and user-friendly structure, we'll lower the learning curve for new users and improve the day-to-day experience for all Sitecore users. This enhanced organization will make Sitecore feel more intuitive and less overwhelming, encouraging broader adoption and more effective use of the platform across the organization. Ultimately, this will lead to faster content creation and publishing processes, ensuring our digital presence remains dynamic and up-to-date.
+          `}
+          partnerships="Content Management Team, Digital Asset Management Team, Marketing Team, UX Design Team"
         />
-
         <h3>Phase 3: Advanced Features and Optimization</h3>
         <NextStepItem
           icon={BarChart2}
           title="Enable A/B Testing and Sitecore Analytics"
-          description="Implement and train users on A/B testing capabilities and Sitecore's analytics features."
-          impact="Data-driven decision making, improved content effectiveness, and better understanding of user behavior."
-          partnerships="Analytics Team, Marketing Team, UX Research Team"
-        />
-        <NextStepItem
-          icon={Users}
-          title="Personalization Implementation"
-          description="Roll out personalization features and train teams on creating targeted content experiences."
-          impact="Enhanced user engagement, improved conversion rates, and more relevant content delivery to our audience."
-          partnerships="Marketing Team, UX Design Team, Content Strategy Team"
+          description={`
+            <p>We will activate and configure Sitecore's built-in A/B testing and analytics capabilities, tailoring them to our specific needs and objectives. This process will involve setting up key performance indicators (KPIs), creating custom dashboards, and integrating with our existing analytics tools. We'll develop a comprehensive training program to ensure all relevant team members can effectively use these features, covering topics such as creating and running A/B tests, interpreting analytics data, and using insights to inform content strategy.</p>
+          `}
+          impact={`
+            Implementing A/B testing and analytics will revolutionize our approach to content creation and user experience optimization. By enabling data-driven decision making, we'll significantly improve content effectiveness and gain a deeper understanding of user behavior. This will lead to more engaging and personalized user experiences, potentially increasing conversion rates and user satisfaction. Teams will be able to quickly identify high-performing content and underperforming areas, allowing for rapid iterations and improvements. The insights gained will inform not just our content strategy, but also our overall digital strategy, ensuring our efforts are aligned with user needs and preferences. Moreover, this data-centric approach will foster a culture of continuous improvement, encouraging teams to experiment, learn, and refine our digital presence constantly.
+          `}
+          partnerships="Analytics Team, Marketing Team, Content Strategy Team, UX Research Team, IT Support Team"
         />
         <NextStepItem
           icon={Layout}
-          title="New Templates and Layouts"
-          description="Develop flexible templates and layouts that accommodate diverse content needs and optimize for conversions."
-          impact="Increased creativity in content presentation, better user experience, and improved ability to achieve business objectives through our digital platforms."
-          partnerships="UX Design Team, Front-end Development Team, Content Strategy Team"
-        />
-
-        <QuoteBox 
-          quote="By following this phased approach, we're not just fixing issues – we're transforming our Sitecore implementation into a powerful, user-friendly platform that drives our digital strategy forward. Each step builds upon the last, creating a compounding positive effect on our operations and our ability to serve our audience effectively."
-          author="DX Team"
-        />
+          title="Optimize Templates and Layouts for Content Impact"
+          description={`
+            We will enhance existing templates and create new layouts in Sitecore to maximize our content's potential and drive key performance indicators (KPIs). This process will involve:
+            <ul>
+              <li>Analyzing current content performance and identifying areas for improvement</li>
+              <li>Enhancing existing templates to better showcase our content</li>
+              <li>Developing new, flexible layouts that support various content types and campaign needs</li>
+              <li>Ensuring all templates are optimized for conversions and user engagement</li>
+              <li>Implementing easy-to-use content components that align with our KPIs</li>
+            </ul>
+          `}
+          impact={`
+            By optimizing our templates and layouts, we'll significantly enhance our ability to create high-impact content. This will lead to improved user engagement, higher conversion rates, and better achievement of our KPIs. Content creators will have the tools they need to present information more effectively, while maintaining brand consistency and adhering to best practices for digital content. Ultimately, this will result in a more powerful and flexible Sitecore implementation that directly supports our business objectives.
+          `}
+          partnerships="Content Strategy Team, UX Design Team, Marketing Team, Front-end Development Team"
+        />                                                                                                                                                             
+        <InfoGraphicSection title="About This Report">
+          <p>
+            This Sitecore User Experience Survey report was prepared by the Digital Experience (DX) Team at GMAC. Our analysis synthesizes feedback from 26 participants across various departments, providing a holistic view of our current Sitecore implementation and outlining a strategic path forward.
+          </p>
+          <p>
+            We've identified key challenges, prioritized improvements, and proposed a phased approach to enhance our digital capabilities. Our recommendations aim to empower all Sitecore users, streamline workflows, and ultimately deliver a more impactful digital experience for our audience.
+          </p>
+          <p>
+            We welcome your feedback and are here to address any questions you may have about this report or our proposed initiatives. For further information or to discuss any aspects of this report in more detail, please don't hesitate to reach out.
+          </p>
+          <div className="contact-info">
+            <h3>Contact Information</h3>
+            <p>
+              <strong>Will Grana</strong><br />
+              Digital Experience Team<br />
+              Email: <a href="mailto:wgrana@gmac.com">wgrana@gmac.com</a>
+            </p>
+          </div>
+        </InfoGraphicSection>
       </InfoGraphicSection>
     </div>
   );
