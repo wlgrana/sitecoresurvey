@@ -456,7 +456,7 @@ function App() {
             </ul>
             <strong>Create a Detailed Project Plan:</strong> Develop a comprehensive project plan with specific dates and milestones. Key components include:
             <ul className="list-disc pl-6 mt-2">
-              <li>Detailed timeline for each phase of the optimization process</li>
+              <li>Deetailed timeline for each phase of the optimization process</li>
               <li>Specific tasks and subtasks with assigned responsibilities</li>
               <li>Key deliverables and their due dates</li>
             </ul>    
