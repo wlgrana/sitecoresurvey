@@ -23,10 +23,28 @@ import {
   FileText, 
   School, 
   Scale, 
-  Laptop 
+  Laptop,
+  Calendar,
+  Clipboard
 } from 'lucide-react';
 import { Chart } from 'react-google-charts';
 import GanttChart from './GanttChart';
+
+const IconHeader = ({ Icon, title }) => (
+  <h3 className="flex items-center gap-2 text-xl font-bold mb-3">
+    <Icon className="w-6 h-6" />
+    {title}
+  </h3>
+);
+
+const BoldPhrase = ({ children }) => <strong className="text-blue-600">{children}</strong>;
+
+const IconListItem = ({ Icon, children }) => (
+  <div className="flex items-start gap-3 mb-4">
+    <Icon className="w-6 h-6 mt-1 flex-shrink-0 text-blue-500" />
+    <span>{children}</span>
+  </div>
+);
 
 const TeamTable = () => {
   const teams = [
@@ -100,9 +118,9 @@ const BarChartSection = ({ data, title }) => (
 );
 
 const createGanttData = () => [
-  { name: 'Phase 1', start: new Date(2024, 6, 1).getTime(), end: new Date(2024, 8, 30).getTime() },
-  { name: 'Phase 3', start: new Date(2024, 6, 1).getTime(), end: new Date(2024, 8, 30).getTime() },
-  { name: 'Phase 2', start: new Date(2024, 9, 1).getTime(), end: new Date(2024, 11, 31).getTime() },
+  { name: 'Phase 1', start: new Date(2024, 7, 1).getTime(), end: new Date(2024, 9, 28).getTime() },
+  { name: 'Phase 2', start: new Date(2024, 9, 1).getTime(), end: new Date(2024, 11, 28).getTime() },
+  { name: 'Phase 3', start: new Date(2024, 11, 1).getTime(), end: new Date(2025, 2, 28).getTime() },
 ];
 
 const PieChartSection = ({ data, title }) => {
@@ -170,21 +188,64 @@ function App() {
     <div className="dashboard">
       <h1 className="main-title">Sitecore User Experience Survey Insights</h1>
       
-      <InfoGraphicSection title="Overview">
-        <p className="challenges-intro">
-          <p>
-            At GMAC, our mission is to empower business schools and candidates to discover and evaluate each other. Sitecore CMS is a crucial tool in achieving this goal, serving as the backbone of our digital presence and content strategy. To ensure we're maximizing Sitecore's potential and empowering our users, we conducted a comprehensive survey with 26 participants from various departments.
-          </p>
-          <TeamTable />
-          <p>
-            This survey aimed to assess the current Sitecore CMS experience and identify areas where we can better leverage the platform to meet our business objectives. By understanding user challenges and needs, we can enhance our digital capabilities, improve content management, and ultimately provide better services to business schools and candidates.
-          </p>
-          <p>
-            The average satisfaction score was 2.8 out of 5, indicating significant room for improvement. Our goal is to transform Sitecore from a tool of necessity to a powerful asset that drives our mission forward, empowering our team to create, manage, and deliver impactful content efficiently.
-          </p>
+  <InfoGraphicSection title="Overview">
+    <p className="challenges-intro">
+      <div className="problem-statement">
+        <h3>Problem Statement</h3>
+        <p>
+          GMAC's current utilization of Sitecore CMS falls short of the platform's full potential, resulting in user dissatisfaction and inefficiencies in content management. This underutilization hinders our ability to effectively empower business schools and candidates in their mutual discovery and evaluation process.
         </p>
-        <BarChartSection data={satisfactionData} title="Overall Satisfaction Ratings" />
-      </InfoGraphicSection>
+      </div>
+      <div className="opportunity">
+        <h3>Opportunity to Maximize Sitecore</h3>
+        <p>
+          By addressing the challenges identified in our survey and implementing strategic improvements, we have a significant opportunity to maximize Sitecore's potential. This will enable us to streamline our content management processes, enhance user experience, and ultimately strengthen our digital presence in support of our mission.
+        </p>
+      </div>
+      <div className="expected-outcomes">
+        <h3>Expected Outcomes</h3>
+        <div className="quick-wins">
+          <h4>Quick Wins: Unlocking Sitecore & Empowering Staff</h4>
+          <ul>
+            <li>Unlock efficient workflows: Streamline content creation and publishing processes to reduce time-to-market</li>
+            <li>Empower with intuitive interfaces: Enhance Sitecore's user interface for improved navigation and task efficiency</li>
+            <li>Enable continuous learning: Integrate on-demand training and support resources directly within Sitecore</li>
+            <li>Foster collaboration: Implement improved tools for seamless cross-departmental content management</li>
+            <li>Unleash creativity: Provide easy access to Sitecore's design and layout tools for non-technical staff</li>
+            <li>Boost productivity: Introduce time-saving features like content templates and reusable components</li>
+          </ul>
+        </div>
+        <div className="long-term-benefits">
+          <h4>Long-term Benefits: Peronalization to Drive Conversions </h4>
+          <ul>
+            <li>Personalization: Leverage existing personas to deliver highly tailored content experiences for business schools, candidates, and other stakeholders</li>
+            <li>Tracking: Implement comprehensive user journey tracking across all touchpoints, aligned with our persona segments</li>
+            <li>Conversions: Optimize conversion paths for key actions such as program inquiries, application starts, and submissions, personalized for each persona</li>
+            <li>Analytics: Utilize Sitecore's advanced analytics to gain deeper insights into persona behavior, refining our understanding and approach over time</li>
+          </ul>
+        </div>
+      </div>
+    </p>
+  </InfoGraphicSection>
+
+  <InfoGraphicSection title="Our Research">
+    <p className="challenges-intro">
+      <div className="overview">
+        <h3>Overview</h3>
+        <p>
+          At GMAC, our mission is to empower business schools and candidates to discover and evaluate each other. Sitecore CMS is a crucial tool in achieving this goal, serving as the backbone of our digital presence and content strategy. To ensure we're maximizing Sitecore's potential and empowering our users, we conducted a comprehensive survey with 26 participants from various departments.
+        </p>
+        <TeamTable />
+        <p>
+          This survey aimed to assess the current Sitecore CMS experience and identify areas where we can better leverage the platform to meet our business objectives. By understanding user challenges and needs, we can enhance our digital capabilities, improve content management, and ultimately provide better services to business schools and candidates.
+        </p>
+        <p>
+          The average satisfaction score was 2.8 out of 5, indicating significant room for improvement. Our goal is to transform Sitecore from a tool of necessity to a powerful asset that drives our mission forward, empowering our team to create, manage, and deliver impactful content efficiently.
+        </p>
+      </div>
+    </p>
+    <BarChartSection data={satisfactionData} title="Overall Satisfaction Ratings" />
+  </InfoGraphicSection>
 
       <InfoGraphicSection title="User Feedback">
   <p className="challenges-intro">
@@ -261,18 +322,19 @@ function App() {
         />
       </InfoGraphicSection>
 
-  <InfoGraphicSection title="Next Steps">
+  <InfoGraphicSection title="Our Plan">
   <p className="challenges-intro">
     Based on our survey findings, we've developed a phased approach to address the challenges and maximize the potential of our Sitecore implementation. This plan is designed to progressively enhance our digital capabilities, user experience, and overall business impact.
-    <GanttChart />
+    <GanttChart/>
   </p> 
         <h3>Phase 1: Foundation Improvements</h3>
         <NextStepItem
           icon={Zap}
-          title="Performance Optimization"
+          title="Performance Optimization - Phase 1"
           description={`
             <p>Our development team, in collaboration with Sitecore support, will conduct a thorough investigation to identify the root causes of the sluggish performance. We'll implement a multi-faceted approach to resolve these issues, which may include:</p>
             <ol>
+              <li>Performance Dashboard that tracks like: Item Save Time (ms), Publish Time (s), Cache Hit Ratio (%), Media Library Access Time (ms), and more.</li>
               <li>Optimizing caching strategies at various levels (browser, CDN, Sitecore)</li>
               <li>Reviewing and potentially upgrading server specifications</li>
               <li>Analyzing and refining Sitecore pipelines and integrations for efficiency</li>
@@ -285,7 +347,7 @@ function App() {
         />
         <NextStepItem
           icon={BookOpen}
-          title="Training and Learning Resources"
+          title="Training and Learning Resources - Phase 1"
           description={`
             <p>We will develop a comprehensive training program and create a variety of learning resources to empower users at all levels. These resources will be centralized and easily accessible through Microsoft Teams and SharePoint, allowing users to search and find the training they need efficiently. Our initiative will include:</p>
             <ol>
@@ -302,7 +364,7 @@ function App() {
         />
         <NextStepItem
           icon={Users}
-          title="Workflow Standardization"
+          title="Workflow Standardization - Phase 1"
           description={`
             We will define and implement standardized workflows for content creation and publishing in Sitecore. This initiative will:
             <ul>
@@ -322,7 +384,7 @@ function App() {
         <h3>Phase 2: Content Organization and Cleanup</h3>
         <NextStepItem
           icon={FolderTree}
-          title="Content and Media Library Reorganization"
+          title="Content and Media Library Reorganization - Phase 2"
           description={`
             <p>We will embark on a comprehensive overhaul of our content and media library structure within Sitecore. This initiative involves a systematic review of all existing content and media assets, followed by the implementation of a new, intuitive organizational structure. We'll develop clear naming conventions, establish a logical hierarchy, and implement robust metadata tagging to enhance searchability. This reorganization will also include the creation of templates and guidelines to ensure consistency in future content uploads and organization.</p>
           `}
@@ -334,7 +396,7 @@ function App() {
         <h3>Phase 3: Advanced Features and Optimization</h3>
         <NextStepItem
           icon={Users}
-          title="Leverage Sitecore 10.2 Personalization Features"
+          title="Personalization - Phase 3"
           description={`
             <p>We will implement and optimize Sitecore 10.2's advanced personalization features to enhance user experience and content relevance. This process will include:</p>
             <ul>
@@ -348,13 +410,12 @@ function App() {
             <p>This implementation will require additional training for content creators and marketers, development of a personalization strategy aligned with business goals, creation of user segments and personas, and ongoing testing and optimization.</p>
           `}
           impact={`
-            Leveraging Sitecore 10.2's personalization features will allow us to provide tailored, highly relevant experiences to our users. This will lead to increased engagement, higher conversion rates, and ultimately better support for business schools and candidates in their decision-making processes. By delivering personalized content, we can improve user satisfaction, increase time spent on our platform, and enhance the overall effectiveness of our digital presence. This data-driven approach will also provide valuable insights into user preferences and behaviors, allowing us to continually refine our content strategy and user experience design. Furthermore, by implementing AI-powered personalization, we can scale our efforts efficiently, ensuring that we can deliver personalized experiences even as our user base grows.
-          `}
+            Leveraging Sitecore personalization features will allow us to provide tailored, highly relevant experiences to our users. This will lead to increased engagement, higher conversion rates, and ultimately better support for business schools and candidates in their decision-making processes.`}
           partnerships="Marketing Team, Content Strategy Team, UX Research Team, IT Support Team, Data Privacy Team"
         />
         <NextStepItem
           icon={BarChart2}
-          title="Enable A/B Testing and Sitecore Analytics"
+          title="Enable A/B Testing and Sitecore Analytics - Phase 3"
           description={`
             <p>We will activate and configure Sitecore's built-in A/B testing and analytics capabilities, tailoring them to our specific needs and objectives. This process will involve setting up key performance indicators (KPIs), creating custom dashboards, and integrating with our existing analytics tools. We'll develop a comprehensive training program to ensure all relevant team members can effectively use these features, covering topics such as creating and running A/B tests, interpreting analytics data, and using insights to inform content strategy.</p>
           `}
@@ -365,7 +426,7 @@ function App() {
         />
         <NextStepItem
           icon={Layout}
-          title="Optimize Templates and Layouts for Content Impact"
+          title="Optimize Templates and Layouts for Content Impact - Phase 3"
           description={`
             We will enhance existing templates and create new layouts in Sitecore to maximize our content's potential and drive key performance indicators (KPIs). This process will involve:
             <ul>
@@ -380,8 +441,38 @@ function App() {
             By optimizing our templates and layouts, we'll significantly enhance our ability to create high-impact content. This will lead to improved user engagement, higher conversion rates, and better achievement of our KPIs. Content creators will have the tools they need to present information more effectively, while maintaining brand consistency and adhering to best practices for digital content. Ultimately, this will result in a more powerful and flexible Sitecore implementation that directly supports our business objectives.
           `}
           partnerships="Content Strategy Team, UX Design Team, Marketing Team, Front-end Development Team"
-        />                                                                                                                                                       
-        <InfoGraphicSection title="About This Report">
+        />    
+
+    <InfoGraphicSection title="Next Steps">
+      <div className="challenges-intro bg-white p-6 rounded-lg shadow-lg">
+        <div className="space-y-6">
+          
+            <strong> Identify Necessary Resources:</strong> Conduct a comprehensive assessment of the resources required for successful Sitecore optimization. This includes:
+            <ul className="list-disc pl-6 mt-2">
+              <li>Technical expertise</li>
+              <li>Content strategists and creators</li>
+              <li>Project management</li>
+              <li>Training resources</li>
+            </ul>
+            <strong>Create a Detailed Project Plan:</strong> Develop a comprehensive project plan with specific dates and milestones. Key components include:
+            <ul className="list-disc pl-6 mt-2">
+              <li>Detailed timeline for each phase of the optimization process</li>
+              <li>Specific tasks and subtasks with assigned responsibilities</li>
+              <li>Key deliverables and their due dates</li>
+            </ul>    
+            <strong>Form a Cross-Functional Working Group:</strong> Establish a dedicated team to oversee and execute the Sitecore optimization project:
+            <ul className="list-disc pl-6 mt-2">
+              <li>Include representatives from IT, Marketing, Content, and key business units</li>
+              <li>Define roles and responsibilities for each team member</li>
+              <li>Set up regular meeting schedules and communication channels</li>
+              <li>Establish decision-making processes and escalation procedures</li>
+              <li>Create a framework for ongoing collaboration and knowledge sharing</li>
+            </ul>
+        </div>
+      </div>
+    </InfoGraphicSection>
+                                                                                                                                             
+      <InfoGraphicSection title="About This Report">
           <p>
             This Sitecore User Experience Survey report was prepared by the Digital Experience (DX) Team at GMAC. Our analysis synthesizes feedback from 26 participants across various departments, providing a holistic view of our current Sitecore implementation and outlining a strategic path forward.
           </p>
