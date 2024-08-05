@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/sitecoresurvey/static/css/main.73bd5db0.css",
-    "main.js": "/sitecoresurvey/static/js/main.7c5259a0.js",
+    "main.js": "/sitecoresurvey/static/js/main.db964425.js",
     "static/js/453.cc3b7b90.chunk.js": "/sitecoresurvey/static/js/453.cc3b7b90.chunk.js",
     "index.html": "/sitecoresurvey/index.html",
     "main.73bd5db0.css.map": "/sitecoresurvey/static/css/main.73bd5db0.css.map",
-    "main.7c5259a0.js.map": "/sitecoresurvey/static/js/main.7c5259a0.js.map",
+    "main.db964425.js.map": "/sitecoresurvey/static/js/main.db964425.js.map",
     "453.cc3b7b90.chunk.js.map": "/sitecoresurvey/static/js/453.cc3b7b90.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.73bd5db0.css",
-    "static/js/main.7c5259a0.js"
+    "static/js/main.db964425.js"
   ]
 }
