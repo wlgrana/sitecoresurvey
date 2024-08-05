@@ -206,14 +206,26 @@ function App() {
         <h3>Expected Outcomes</h3>
         <div className="quick-wins">
           <h4>Quick Wins: Unlocking Sitecore & Empowering Staff</h4>
-          <ul>
-            <li>Unlock efficient workflows: Streamline content creation and publishing processes to reduce time-to-market</li>
-            <li>Empower with intuitive interfaces: Enhance Sitecore's user interface for improved navigation and task efficiency</li>
-            <li>Enable continuous learning: Integrate on-demand training and support resources directly within Sitecore</li>
-            <li>Foster collaboration: Implement improved tools for seamless cross-departmental content management</li>
-            <li>Unleash creativity: Provide easy access to Sitecore's design and layout tools for non-technical staff</li>
-            <li>Boost productivity: Introduce time-saving features like content templates and reusable components</li>
-          </ul>
+          <ul className="space-y-3 list-disc pl-5">
+`            <li>
+              <strong>Unlock efficient workflows:</strong> Streamline content creation and publishing processes to reduce time-to-market
+            </li>
+            <li>
+              <strong>Enhance content organization:</strong> Implement more intuitive content structure and media library organization to simplify content management and creation
+            </li>
+            <li>
+              <strong>Enable continuous learning:</strong> Create on-demand training modules and support resources, available in Teams and SharePoint
+            </li>
+            <li>
+              <strong>Foster collaboration:</strong> Implement improved tools for seamless cross-departmental content management
+            </li>
+            <li>
+              <strong>Unleash creativity:</strong> Provide easy access to Sitecore's design and layout tools for non-technical staff
+            </li>
+            <li>
+              <strong>Boost productivity:</strong> Introduce time-saving features like content templates and reusable components
+            </li>
+          </ul>`
         </div>
         <div className="long-term-benefits">
           <h4>Long-term Benefits: Peronalization to Drive Conversions </h4>
@@ -456,7 +468,7 @@ function App() {
             </ul>
             <strong>Create a Detailed Project Plan:</strong> Develop a comprehensive project plan with specific dates and milestones. Key components include:
             <ul className="list-disc pl-6 mt-2">
-              <li>Deetailed timeline for each phase of the optimization process</li>
+              <li>Detailed timeline for each phase of the optimization process</li>
               <li>Specific tasks and subtasks with assigned responsibilities</li>
               <li>Key deliverables and their due dates</li>
             </ul>    
