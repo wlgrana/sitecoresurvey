@@ -204,10 +204,10 @@ function App() {
       </div>
       <div className="expected-outcomes">
         <h3>Expected Outcomes</h3>
-        <div className="quick-wins">
-          <h4>Quick Wins: Unlocking Sitecore & Empowering Staff</h4>
+        <div className="quick-wins bg-white p-6 rounded-lg shadow-lg">
+          <h4 className="text-xl font-bold mb-4">Quick Wins: Unlocking Sitecore & Empowering Staff</h4>
           <ul className="space-y-3 list-disc pl-5">
-`            <li>
+            <li>
               <strong>Unlock efficient workflows:</strong> Streamline content creation and publishing processes to reduce time-to-market
             </li>
             <li>
@@ -225,15 +225,15 @@ function App() {
             <li>
               <strong>Boost productivity:</strong> Introduce time-saving features like content templates and reusable components
             </li>
-          </ul>`
+          </ul>
         </div>
         <div className="long-term-benefits">
           <h4>Long-term Benefits: Peronalization to Drive Conversions </h4>
           <ul>
-            <li>Personalization: Leverage existing personas to deliver highly tailored content experiences for business schools, candidates, and other stakeholders</li>
-            <li>Tracking: Implement comprehensive user journey tracking across all touchpoints, aligned with our persona segments</li>
-            <li>Conversions: Optimize conversion paths for key actions such as program inquiries, application starts, and submissions, personalized for each persona</li>
-            <li>Analytics: Utilize Sitecore's advanced analytics to gain deeper insights into persona behavior, refining our understanding and approach over time</li>
+            <li><strong>Personalization:</strong> Leverage existing personas to deliver highly tailored content experiences for business schools, candidates, and other stakeholders</li>
+            <li><strong>Tracking:</strong> Implement comprehensive user journey tracking across all touchpoints, aligned with our persona segments</li>
+            <li><strong>Conversions:</strong> Optimize conversion paths for key actions such as program inquiries, application starts, and submissions, personalized for each persona</li>
+            <li><strong>Analytics:</strong> Utilize Sitecore's advanced analytics to gain deeper insights into persona behavior, refining our understanding and approach over time</li>
           </ul>
         </div>
       </div>
